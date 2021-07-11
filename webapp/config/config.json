@@ -1,0 +1,13 @@
+{
+    "TRELLO_KEY": "ba0eab9621e51e4499a51f5a1c35d243",
+    "TRELLO_TOKEN": "3baf9b321413f75e142d198ed8b3e2bb337429af63df90b62645ebaaa9f9bdea",
+    "TRELLO_URL": "https://api.trello.com/1/",
+    "SPOTIFY_URL": "https://accounts.spotify.com",
+    "SPOTIFY_CLIENTID": "575c185886e14f0094f2a9406d07f634",
+    "SPOTIFY_SECRETID": "66da2aaffdbe418b904ebd42e932d307",
+    "SPOTIFY_REDIRECT_URL": "https://workspaces-ws-gv2kf-app1.us10.trial.applicationstudio.cloud.sap/index.html",
+    "SPOTIFY_CODE": "",
+    "SPOTIFY_API": "https://api.spotify.com/v1",
+    "SPOTIFY_SHOWDIALOG": "true",
+    "NO_IMAGE": "https://raw.githubusercontent.com/mtilve/repository/main/No_Image_Available.jpg"
+}

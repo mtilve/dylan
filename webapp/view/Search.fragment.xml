@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="searchDialog"
+		items="{/ArtistCollection}"
+		search=".onValueHelpSearch"
+		confirm=".onValueHelpClose"
+		cancel=".onValueHelpClose">
+		<StandardListItem
+            icon="{picture}"
+			iconDensityAware="false"
+			iconInset="false"
+			title="{name}" />
+	</SelectDialog>
+</core:FragmentDefinition>

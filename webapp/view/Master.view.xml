@@ -1,0 +1,35 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="dylan.bob.controller.Master" id="masterId">
+	<Page id="masterpageid" title="{i18n>requestInbox}" showNavButton="false" showHeader="true" showSubHeader="true"
+		navButtonTooltip="" enableScrolling="true">
+		<content>
+			<List id="emplist" items="{ path: '/Boards'}" itemPress="handleListSelect" footerText=""
+				noDataText="{i18n>noDataMaster}" showNoData="true">
+				<items>
+					<ObjectListItem title="{name}" type="Active" press="onListItemPress">
+                        <ObjectAttribute title="{i18n>Id}" text="{id}"/>
+                        <ObjectAttribute title="{i18n>URL}" text="{shortUrl}"/>
+					</ObjectListItem>
+				</items>
+				<headerToolbar>
+					<OverflowToolbar>
+						<SearchField id="searchField" showRefreshButton="true" placeholder="{i18n>search}" tooltip="{i18n>search}" search="onFilterApplyPress" width="auto"
+							value="{/Filter}">
+							<layoutData>
+								<OverflowToolbarLayoutData minWidth="150px" maxWidth="240px" shrinkable="true" priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+			</List>
+		</content>
+		
+        <footer>
+			<Bar>
+			<contentRight>	
+                	<Button icon="sap-icon://add" tooltip="{i18n>newRequest}" press="handleNewRequest" visible="true"/>
+			</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

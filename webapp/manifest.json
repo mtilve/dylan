@@ -1,0 +1,149 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "dylan.bob",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "ach",
+        "sourceTemplate": {
+            "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+            "version": "1.40.12"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "dylan"
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "dylan.bob.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.1",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "dylan.bob.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "dylan.bob.view",
+                "controlAggregation": "pages",
+                "controlId": "idAppControl",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target": [
+                        "empty",
+                        "master"
+                    ]
+                },
+                {
+                    "name": "RouteMaster",
+                    "pattern": "",
+                    "target": [
+                        "master"
+                    ]
+                },
+                {
+                    "pattern": "empty",
+                    "name": "empty",
+                    "target": [
+                        "empty",
+                        "master"
+                    ]
+                },
+                {
+                    "pattern": "new",
+                    "name": "detail",
+                    "target": [
+                        "detail",
+                        "master"
+                    ]
+                },
+                {
+                    "pattern": "board/{id}",
+                    "name": "request",
+                    "target": [
+                        "request",
+                        "master"
+                    ]
+                }
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Master",
+                    "controlAggregation": "masterPages",
+                    "viewLevel": 0
+                },
+                "empty": {
+                    "viewName": "Empty",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "detail": {
+                    "viewName": "Detail",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "request": {
+                    "viewName": "Request",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                }
+            }
+        }
+    }
+}

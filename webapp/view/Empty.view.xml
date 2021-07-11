@@ -1,0 +1,15 @@
+<core:View
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    templateShareable="true">
+	<Page title="">
+		<MessagePage
+			class="customTextColor"
+			showHeader="false"
+			text="{i18n>emptyMessageDetail}"
+			description="">
+		</MessagePage>
+	</Page>
+</core:View>

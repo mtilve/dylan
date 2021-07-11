@@ -1,0 +1,52 @@
+<mvc:View id="IngFac" controllerName="dylan.bob.controller.Request"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:p="com.penninkhof.controls"
+    xmlns:table="sap.ui.table">
+    <Page id="page" title="{/SelectedBoard/name}" showNavButton="{device>/isPhone}" navButtonPress="onNavPressBack">
+        <content>
+
+            <FlexBox direction="Column" class="sapUiSmallMarginBottom sapUiSmallMarginTop" alignItems="Center" justifyContent="Center">
+                <p:QRCode code="{/SelectedBoard/shortUrl}" />
+            </FlexBox>
+            <table:Table class="sapUiSizeCozy" columnHeaderHeight="20"  showColumnVisibilityMenu="true" rowHeight="100" visibleRowCountMode="Fixed" selectionMode="None" id="table" rows="{
+                    path: '/CurrentLists', 
+                    sorter: [{
+                        path: 'Year', 
+                        descending: false
+                    }, {
+                        path: 'Album', 
+                        descending: false
+                    }]
+                }">
+                <table:columns>
+                    <table:Column hAlign="Center" width="auto">
+                        <Label text="{i18n>Year}" wrapping="true"/>
+                        <table:template>
+                            <Text text="{Year}" wrapping="true"/>
+                        </table:template>
+                    </table:Column>
+                    <table:Column hAlign="Center" width="auto">
+                        <Label text="{i18n>Album}" wrapping="true"/>
+                        <table:template>
+                            <Text text="{Album}" wrapping="true"/>
+                        </table:template>
+                    </table:Column>
+                    <table:Column hAlign="Center" width="auto">
+                        <Label text="{i18n>CoverArt}" wrapping="true"/>
+                        <table:template>
+                            <Image src="{Image}" width="100px" densityAware="false" error="errorLoadImagen">
+                            </Image>
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName="dylan.bob.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	displayBlock="true"
+	busy="{appView>/busy}"
+	busyIndicatorDelay="{appView>/delay}"
+	xmlns="sap.m">
+	<SplitApp id="idAppControl" class="sapUiSizeCompact"/>
+</mvc:View>
