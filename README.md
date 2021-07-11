@@ -1,34 +1,28 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Sat Jul 10 2021 00:02:19 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.2.4|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Floorplan Used**<br>simple|
-|**Service Type**<br>None|
-|**Service URL**<br>N/A
-|**Module Name**<br>bob|
-|**Application Title**<br>DYLAN|
-|**Namespace**<br>dylan|
-|**UI5 Theme**<br>sap_belize|
-|**UI5 Version**<br>Latest|
-|**Enable Telemetry**<br>False|
+## Dylan - Trello's Album Manager
 
-## bob
+Create Trello Boards using Trello APIs and Spotify API
+Upload a txt file with the discography of an artist and create a Trello board with the cover art album
+Each Trello board is sorted by decade (one list by decade) and one card for each album 
+Support for i18n en/es
+Responsive
 
-A Fiori application.
+## About the app
 
-### Starting the generated app
+Developed with sapui5 https://sapui5.hana.ondemand.com/
+Using a trial account of SAP BTP Business Application Studio
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
+## Documentation used to develop the app
 
-```
-    npm start
-```
+# Spotify
 
-#### Pre-requisites:
+Authorization Guide https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow
+How to Authenticate and use Spotify Web API https://www.youtube.com/watch?v=1vR3m0HupGI
+Spotify for developers Console https://developer.spotify.com/console/
+Spotify Web API tutorial Quick Start https://developer.spotify.com/documentation/web-api/quick-start/
 
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+# Trello
 
+Playing with Trello APIs to create a Trello board through POSTMAN https://www.youtube.com/watch?v=_lVZDuy124k
+Trello Developer Web API https://developer.atlassian.com/cloud/trello/rest/api-group-actions/
+Authorizing With Trello's REST API https://developer.atlassian.com/cloud/trello/guides/rest-api/authorization/
 
