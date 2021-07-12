@@ -29,7 +29,6 @@ sap.ui.define([
                 var def = utils.fetchSpotifyAccessToken();
                 def.then(
                     function (data) {
-                        //console.log(data);
                         localModel.setProperty("/SpotifyTokens", data);
                         window.history.pushState("", "", utils.SPOTIFY_REDIRECT_URL);
                     },
@@ -37,7 +36,6 @@ sap.ui.define([
                         window.history.pushState("", "", utils.SPOTIFY_REDIRECT_URL);
                         var i18n = that.getView().getModel("i18n");
                         var spotifyErrorMessage = i18n.getResourceBundle().getText("spotifyErrorMessage");
-                        //that.getView().setBusy(false);
                         console.log("Error al obteber el token de spotify: " + error.responseText);
                         sap.m.MessageBox.error(error.responseText, {
                             title: spotifyErrorMessage,
@@ -51,7 +49,6 @@ sap.ui.define([
         onAfterRendering: function () {
             var oEventBus = sap.ui.getCore().getEventBus();
             oEventBus.subscribe("MyChannel", "doStuff", this.initControllerReload, this);
-
             this.loadMaster();
         },
 

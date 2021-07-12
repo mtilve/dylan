@@ -46,11 +46,14 @@ sap.ui.define(
             handleFileUploaderChange: function (oEvent) {
                 var that = this;
                 var oBusyDialog = new sap.m.BusyDialog();
+                var i18n = that.getView().getModel("i18n");
+                var fileErrorMessage = i18n.getResourceBundle().getText("fileErrorMessage");
+                var loadingFile =  i18n.getResourceBundle().getText("loadingFile");
                 var file = oEvent.getParameter("files") && oEvent.getParameter("files")[0];
                 if (file && window.FileReader) {
                     var reader = new FileReader();
                     reader.onloadstart = function (evt) {
-                        oBusyDialog.setText("Cargando archivo.");
+                        oBusyDialog.setText(loadingFile);
                         oBusyDialog.open();
                     };
                     reader.onloadend = function (evt) {
@@ -91,7 +94,7 @@ sap.ui.define(
                     };
                     reader.onerror = function (evt) {
                         oBusyDialog.close();
-                        MessageBox.error("Ocurrió un error al cargar el archivo.", {
+                        MessageBox.error(fileErrorMessage, {
                             title: "Error"
                         });
                     };
@@ -128,7 +131,7 @@ sap.ui.define(
                         },
                         function (error) {
                             that.getView().setBusy(false);
-                            console.log("Error al crear el Tablero: " + error.responseText);
+                            console.log("Error creating the board: " + error.responseText);
                             sap.m.MessageBox.error(error.responseText, {
                                 title: boardErrorMessage,
                                 actions: [MessageBox.Action.OK]
@@ -159,6 +162,8 @@ sap.ui.define(
             createLists: function (idBoard) {
                 var that = this;
                 var localModel = utils.model;
+                var i18n = that.getView().getModel("i18n");
+                var successMessageBoard = i18n.getResourceBundle().getText("successMessageBoard");
                 that.getView().setBusy(true);
                 var FileData = utils.model.getProperty("/FileData");
                 var idArray = this.getView().byId("table").getBinding().aIndices;
@@ -189,7 +194,7 @@ sap.ui.define(
                     var final = lists.concat(tasks);
                     Promise.all(final).then(() => {
                         that.getView().setBusy(false);
-                        sap.m.MessageBox.success("Success", {
+                        sap.m.MessageBox.success(successMessageBoard, {
                             actions: [MessageBox.Action.OK],
                             onClose: function () {
                                 var oEventBus = sap.ui.getCore().getEventBus();
