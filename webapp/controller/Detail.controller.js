@@ -189,7 +189,7 @@ sap.ui.define(
                         }, Promise.resolve());
                     };
 
-                    var lists = localModel.getProperty("/currentLists");
+                    var lists = localModel.getProperty("/currentLists") ? localModel.getProperty("/currentLists") : [];
                     callTasks(tasks);
                     var final = lists.concat(tasks);
                     Promise.all(final).then(() => {
